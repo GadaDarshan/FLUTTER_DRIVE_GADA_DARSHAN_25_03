@@ -8,8 +8,8 @@ import 'dart:io';
 */
 
 void main() {
-  print("name : my name is prajesh ");
-  print("birth date : 17/07/2002");
+  print("name : my name is darshan ");
+  print("birth date : 25/03/2001");
   print("age : 20 ");
   print("address : soladi , ta- dhangadhara , dist - surendranagar");
 }
