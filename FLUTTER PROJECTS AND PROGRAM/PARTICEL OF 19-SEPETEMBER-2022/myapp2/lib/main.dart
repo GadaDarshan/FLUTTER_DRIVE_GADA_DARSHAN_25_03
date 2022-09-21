@@ -58,7 +58,6 @@ class _MyAppState extends State<MyApp> {
         builder: (BuildContext context) {
           return alertDialog;
         });
-
     ;
   }
 }
