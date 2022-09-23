@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/alert_display_page.dart';
+import 'package:myapp/radiobutton.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,13 +16,6 @@ class MyApp extends StatefulWidget {
 class _MainState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Instagram"),
-          backgroundColor: Colors.blueGrey[700],
-        ),
-      ),
-    );
+    return MaterialApp(home: AlertDisplayPage());
   }
 }
