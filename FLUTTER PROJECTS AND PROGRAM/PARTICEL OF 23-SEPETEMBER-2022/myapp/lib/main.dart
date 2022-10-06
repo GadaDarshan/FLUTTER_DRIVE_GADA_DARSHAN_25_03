@@ -1,68 +1,89 @@
 import 'package:flutter/material.dart';
 
+import 'dart:math';
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MainState();
+  State<MyApp> createState() => _MyAppState();
 }
 
-class _MainState extends State<MyApp> {
+class _MyAppState extends State<MyApp> {
+  TextEditingController numberController = TextEditingController();
+  String? hint = "RESULT";
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: [Text("Whats App"), Icon(Icons.whatsapp_outlined)],
-          ),
-          backgroundColor: Colors.transparent,
-        ),
-        body: Container(
-          width: double.maxFinite,
-          height: 550,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(
-                      "https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bG9naW58ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"),
-                  fit: BoxFit.cover)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Column(
-                children: const [
-                  Text(
-                    "Login",
-                    style: TextStyle(fontSize: 24, color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  Image(
-                      image: NetworkImage(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3HAU_knClOefODxjF4z7j8giZGZiX6QSOA&usqp=CAU")),
-                  // TextField(
-                  //   decoration: InputDecoration(
-                  //       hintText: "Phone Number",
-                  //       labelText: "Enter Number",
-                  //       prefixIcon: Icon(Icons.note_add),
-                  //       enabledBorder: OutlineInputBorder(
-                  //           borderSide: BorderSide(color: Colors.purple))),
-                  // ),
-                ],
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            Container(
+              child: Text(
+                "NUMBER GUESSING GAME",
+                style: TextStyle(fontSize: 64, color: Colors.purple),
               ),
-            ],
-          ),
+            ),
+            Container(
+              margin: EdgeInsets.all(25),
+              child: TextField(
+                controller: numberController,
+                decoration: InputDecoration(
+                    labelText: "Enter your number",
+                    hintText: "Enter number between 0 to 100",
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50))),
+              ),
+            ),
+            Container(
+              child: ElevatedButton(
+                child: Text("Send"),
+                onPressed: () {
+                  String num = numberController.text;
+
+                  print("---> num " + numberController.text);
+                  number_guess(int.parse(num));
+                  numberController.text = "";
+                  print("----> clicked");
+                },
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 50),
+              child: Text(
+                hint!,
+                style: TextStyle(fontSize: 26),
+              ),
+            )
+          ],
         ),
       ),
     );
+  }
+
+  void number_guess(int num) {
+    int? computer;
+    Random random = Random();
+    computer = random.nextInt(101);
+    String? msg;
+    if (num > computer) {
+      msg = "HINT : GUESS LOWER NUMBER";
+    } else if (num < computer) {
+      msg = "HINT : GUESS UPPER NUMBER";
+    } else {
+      msg = "YOU GOT IT";
+    }
+    setState(() {
+      hint = msg;
+    });
   }
 }
