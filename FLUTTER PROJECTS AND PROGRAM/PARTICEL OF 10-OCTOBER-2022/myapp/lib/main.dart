@@ -17,27 +17,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          // appBar: AppBar(
-          //   title: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     mainAxisSize: MainAxisSize.max,
-          //     children: [
-          //       Text(
-          //         "Android",
-          //         style: TextStyle(
-          //             fontSize: 25,
-          //             fontWeight: FontWeight.bold,
-          //             color: Colors.white),
-          //       ),
-          //       Icon(
-          //         Icons.android,
-          //         size: 26,
-          //       ),
-          //     ],
-          //   ),
-          //   backgroundColor: Colors.green,
-          // ),
-          backgroundColor: Colors.green[300],
+          backgroundColor: Colors.blue,
           body: SingleChildScrollView(
             child: Container(
               // margin: EdgeInsets.all(15),
@@ -47,7 +27,7 @@ class _MyAppState extends State<MyApp> {
                   Container(
                       child: Center(
                     child: Text(
-                      "Welcome \n  to \n Android",
+                      "Welcome \n  to \n Facebook",
                       style: TextStyle(
                           fontSize: 52,
                           fontWeight: FontWeight.bold,
@@ -57,7 +37,7 @@ class _MyAppState extends State<MyApp> {
                   Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: Colors.green[400]),
+                        color: Colors.white),
                     width: 350,
                     height: 550,
                     child: Column(
@@ -107,6 +87,7 @@ class _MyAppState extends State<MyApp> {
                                     onPressed: () {},
                                     child: Text("Forget Password?")),
                               ),
+                              Text("/"),
                               Center(
                                 child: TextButton(
                                     onPressed: () {},
@@ -125,6 +106,24 @@ class _MyAppState extends State<MyApp> {
                         )),
                       ],
                     ),
+                  ),
+                  Container(
+                    height: 80,
+                    width: double.maxFinite,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Version 1.0.1",
+                            style: TextStyle(fontSize: 18, color: Colors.white),
+                          ),
+                          Text(
+                            "Developed by Codergroup",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          )
+                        ]),
                   )
                 ],
               ),
