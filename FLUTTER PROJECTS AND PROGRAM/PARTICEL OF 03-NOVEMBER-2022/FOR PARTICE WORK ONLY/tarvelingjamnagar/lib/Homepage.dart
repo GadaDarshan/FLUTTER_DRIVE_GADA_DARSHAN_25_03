@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -16,14 +14,23 @@ class _HomePage_travelState extends State<HomePage_travel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Travel the world")),
+        title: Center(child: Text("Travel the Jamnagar")),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Container(
+        color: Colors.blueGrey[200],
         child: Column(
           children: [
-            Text(
-              "This is the body",
-              style: TextStyle(color: Colors.purple, fontSize: 35),
+            Center(
+              child: Center(
+                child: Text(
+                  "This is the body",
+                  style: TextStyle(
+                      color: Colors.purple,
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
             ),
           ],
         ),
