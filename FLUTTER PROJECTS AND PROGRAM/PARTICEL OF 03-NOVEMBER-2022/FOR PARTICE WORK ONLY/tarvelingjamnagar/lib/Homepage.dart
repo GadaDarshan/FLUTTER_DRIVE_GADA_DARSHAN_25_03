@@ -55,8 +55,9 @@ class _HomePage_travelState extends State<HomePage_travel> {
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   _listItems("assets/images/home.jpeg", "Home"),
-                  _listItems("assets/images/rooms.jpeg", "Rooms"),
-                  _listItems("assets/images/girl.jpeg", "Place")
+                  _listItems("assets/images/home.jpeg", "Rooms"),
+                  _listItems("assets/images/home.jpeg", "Place"),
+                  _listItems("assets/images/home.jpeg", "Hotel"),
                 ],
               ),
             ),
@@ -110,7 +111,7 @@ class _HomePage_travelState extends State<HomePage_travel> {
         Container(
           height: 100,
           child: Image.asset(
-            "assets/images/home.jpeg$i.jpeg",
+            "assets/images$i.jpeg",
             fit: BoxFit.fill,
           ),
         )
