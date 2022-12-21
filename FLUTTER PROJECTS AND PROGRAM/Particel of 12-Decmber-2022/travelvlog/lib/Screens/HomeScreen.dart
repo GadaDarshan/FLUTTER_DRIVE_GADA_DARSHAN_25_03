@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:travelvlog/Screens/FirstScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -99,7 +100,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: 20.0,
                       ),
-                      ElevatedButton(onPressed: () {}, child: Text("Login")),
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) => FirstScreen())));
+                          },
+                          child: Text("Login")),
                       TextButton(
                           onPressed: () {},
                           child: Text("Do you have account? Register"))
